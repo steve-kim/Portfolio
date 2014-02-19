@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ConnexusAndroid</string>
+    <string name="action_settings">Settings</string>
+    <string name="connexus">Connexus!</string>
+    <string name="noLoginStreamsButton">View Streams</string>
+    <string name="title_activity_view_single_stream">ViewSingleStream</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="buttonMorePictures">More pictures</string>
+    <string name="buttonUploadImage">Upload an Image</string>
+    <string name="buttonStreams">Streams</string>
+    <string name="title_activity_upload_image">UploadImage</string>
+    <string name="buttonLibrary">Choose from your library</string>
+    <string name="buttonCamera">Use camera</string>
+    <string name="CommentsAndTags">Add a message and/or tags</string>
+    <string name="buttonUploadPicture">Upload</string>
+    <string name="searchHint">Find Streams</string>
+    <string name="buttonLabelNearby">Nearby</string>
+    <string name="buttonLabelSearch">Search</string>
+    <string name="title_activity_use_camera">UseCamera</string>
+    
+    <string name="takePicture">Take a Picture</string>
+    <string name="usePicture">Use this picture</string>
+    <string name="cameraPreview">Picture preview</string>
+
+</resources>

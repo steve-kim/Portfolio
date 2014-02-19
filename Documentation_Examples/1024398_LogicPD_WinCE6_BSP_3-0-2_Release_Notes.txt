@@ -1,0 +1,675 @@
+DM37x Windows Embedded CE 6.0 BSP                                 Release Notes
+-------------------------------------------------------------------------------
+
+Logic PD
+
+Version:    3.0.2
+
+Hardware:   DM3730/AM3703 SOM-LV & DM3730/AM3703 Torpedo SOM 
+
+Date:       7/17/2013
+
+-------------------------------------------------------------------------------
+
+---------------------------
+Table of Contents
+---------------------------
+0 Scope of Document
+1 Package Contents
+2 Supported Drivers and Features
+3 Tested Platforms
+4 Bootloader
+5 Known Issues
+6 How To
+7 History
+8 Revision Information
+---------------------------
+
+0) Scope of Document
+--------------------
+This document contains information pertaining to the use of Logic PD's 
+Windows Embedded CE 6.0 BSP on the DM3730/AM3703 SOM-LV and DM3730/AM3703 
+Torpedo SOM platforms. It provides information on the contents of the enclosed 
+.zip file. For instructions about how to install and use this package, please 
+see the "DM37x Windows Embedded CE 6.0 BSP User Guide," available on the 
+Logic PD website at: http://support.logicpd.com/downloads/1423/ 
+
+IMPORTANT NOTE: Windows CE software is not supported for use on the
+DM3730/AM3703 Torpedo + Wireless SOM.
+
+
+1) Package Contents
+-------------------
+This release contains the following folders and files:
+
+--) \Binaries
+    This folder contains pre-built OS images based on OS Designs also 
+    included with this package. The differences are listed below. 
+    Each image references the applicable model numbers, as well as a
+    .pbxml file, associated with the selected catalog items. Please refer to 
+    the model number of your own device to determine the applicable image.
+    
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\NK-SOMLV_10A_256MB-RAM.bin
+      RAM-based registry storage release build of LOGIC_ARM_A8_SOM_LV_DM_10A
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. For application development, connect the Visual Studio tools 
+      using ActiveSync over USB Function (OTG) or an active Ethernet connection.
+      Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_SOM_LV_DM_10A.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-10-2782IFCR
+        SOMDM3730-10-1782IFXR
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\NK-SOMLV_10A_HIVE_LCD_256MB-RAM.bin
+      Hive-based registry storage release build of LOGIC_ARM_A8_SOM_LV_DM_10A_HIVE_LCD
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. For application development, connect the Visual Studio tools 
+      using ActiveSync over USB Function (OTG) or an active Ethernet connection.
+      Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_SOM_LV_DM_10A_HIVE_LCD.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-10-2782IFCR
+        SOMDM3730-10-1782IFXR
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\NK-SOMLV_10A_HIVE_DVI_256MB-RAM.bin
+      Hive-based registry storage release build of LOGIC_ARM_A8_SOM_LV_DM_10A_HIVE_DVI
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. For application development, connect the Visual Studio tools 
+      using ActiveSync over USB Function (OTG) or an active Ethernet connection.
+      Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_SOM_LV_DM_10A_HIVE_LCD.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-10-2782IFCR
+        SOMDM3730-10-1782IFXR
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\NK-TORPEDO_10A_256MB-RAM.bin
+      RAM-based registry storage release build of LOGIC_ARM_A8_TORPEDO_DM_10A
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. For application development, connect the Visual Studio tools 
+      using ActiveSync over USB Function (OTG) or an active Ethernet connection.
+      Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_TORPEDO_DM_10A.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-20-1780AGIR
+        SOMDM3730-20-2780AGCR
+        SOMAM3703-20-1780AGCR
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\ NK-TORPEDO_10A_HIVE_LCD_256MB-RAM.bin
+      Hive-based registry storage release build of LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_LCD
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. For application development, connect the Visual Studio tools 
+      using ActiveSync over USB Function (OTG) or an active Ethernet connection.
+      Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_LCD.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-20-1780AGIR
+        SOMDM3730-20-2780AGCR
+        SOMAM3703-20-1780AGCR
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\ NK-TORPEDO_10A_HIVE_LCD_512MB-RAM.bin
+      Hive-based registry storage release build of LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_LCD
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. Supports 512 MB RAM (352MB User accessible). For application development, 
+      connect the Visual Studio tools using ActiveSync over USB Function (OTG) or an active 
+      Ethernet connection. Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_LCD.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-20-1880AGIR 
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\NK-TORPEDO_10A_HIVE_DVI_256MB-RAM.bin
+      Hive-based registry storage release build of LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_DVI
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. For application development, connect the Visual Studio tools 
+      using ActiveSync over USB Function (OTG) or an active Ethernet connection.
+      Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_DVI.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-20-1780AGIR
+        SOMDM3730-20-2780AGCR
+        SOMAM3703-20-1780AGCR
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\NK-TORPEDO_10A_512MB-RAM.bin
+      RAM-based registry storage release build of LOGIC_ARM_A8_TORPEDO_DM_10A
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. Supports 512 MB RAM (352MB User accessible). For application development, 
+      connect the Visual Studio tools using ActiveSync over USB Function (OTG) or an active 
+      Ethernet connection. Contains most application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_TORPEDO_DM_10A.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-20-1880AGIR 
+
+    - LOGIC_SOM_ARM_A8\LOGIC_SOM_ARM_A8\NK-TORPEDO_10A_VRFB_256MB-RAM.bin
+      RAM-based registry storage release build of LOGIC_ARM_A8_TORPEDO_DM_10A
+      OS Design. Contains all of the bells and whistles, including multimedia 
+      support and Internet Explorer. A very large image; most components are 
+      included. Include VRFB support with display rotated 90 degrees. For 
+      application development, connect the Visual Studio tools using ActiveSync 
+      over USB Function (OTG) or an active Ethernet connection. Contains most 
+      application support components.
+      Reference .pbxml file: LOGIC_ARM_A8_TORPEDO_DM_10A.pbxml.
+      This image applies to the following model numbers:
+        SOMDM3730-20-1780AGIR
+        SOMDM3730-20-2780AGCR
+        SOMAM3703-20-1780AGCR
+
+    - LogicLoader_Scripts/
+      Contains example scripts for loading and launching the NK.bin files.
+ 
+      + load_from_nand_script.txt
+        Mounts YAFFS partition and loads NK.bin from YAFFS.
+
+      + load_from_sd_script.txt
+        Mounts SD card and loads NK.bin from SD.
+
+      + LoLo_bootme_192.168.0.154_NET
+        Sets up static IP address, sends bootme packet to Platform 
+        Builder/VS2005, and loads NK.bin from Platform Builder.
+
+      + LoLo_bootme_dhcp_NET
+        Sets up DHCP address, sends bootme packet to Platform Builder/VS2005, 
+        and loads NK.bin from Platform Builder.
+
+      + WinCE_Launch_after_ram_load_boot_script.losh
+        Command to launch OS after NK.bin is loaded (assumes default 4.3" 
+        display is used).
+
+      + WinCE_Launch_LCD-x.x-xxxx-xx_ram_boot_script.losh
+        Command to launch OS after NK.bin is loaded, and sets up specific 
+        display kit before launching into OS.
+
+--) \Documentation
+    This folder contains documents describing the operation and use of the 
+    driver components built into the OS Design.
+
+--) \OSDesigns
+
+    - LOGIC_ARM_A8_SOM_LV_DM_10A
+      This OSDesign is for the SOM-LV RAM-based registry. 
+      It contains most of the drivers, including multimedia and Internet Explorer, 
+      plus all application support.
+
+    - LOGIC_ARM_A8_SOM_LV_DM_10A_HIVE_LCD
+      This OSDesign is for the SOM-LV Hive-based registry, LCD display. 
+      It contains most of the drivers, including multimedia and Internet Explorer, 
+      plus all application support.
+
+    - LOGIC_ARM_A8_SOM_LV_DM_10A_HIVE_DVI
+      This OSDesign is for the SOM-LV Hive-based registry, DVI display. 
+      It contains most of the drivers, including multimedia and Internet Explorer, 
+      plus all application support.
+
+    - LOGIC_ARM_A8_TORPEDO_DM_10A
+      This OSDesign is for the Torpedo RAM-based registry. 
+      It contains most of the drivers, including multimedia and Internet Explorer, 
+      plus all application support.
+
+    - LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_LCD
+      This OSDesign is for the Torpedo Hive-based registry, LCD display. 
+      It contains most of the drivers, including multimedia and Internet Explorer, 
+      plus all application support.
+
+    - LOGIC_ARM_A8_TORPEDO_DM_10A_HIVE_DVI
+      This OSDesign is for the Torpedo Hive-based registry, DVI display. 
+      It contains most of the drivers, including multimedia and Internet Explorer, 
+      plus all application support.
+
+--) \PLATFORM
+    This folder contains the DM3730/AM3703 SOM-LV and DM3730/AM3703 Torpedo SOM 
+    platform-specific port of the Windows CE 6.0 operating system. The BSP can 
+    be built for either platform, based on a catalog component choice. There are 
+    very few differences in the hardware design and these small differences are 
+    handled in software by the building process. 	
+					 
+
+2) Supported Drivers and Features
+---------------------------------
+--) Basic kernel functionality
+    - Interrupts, 1 ms system timer
+    - Shared access to TWL chip, I2C interface, and GPIO
+    - Performance counter supported
+    - TWL Root Driver
+    - OEMIdle / Suspend support
+    - RTC
+
+--) Audio Driver
+    - Supports audio playback through audio jack on the baseboard
+    - Supports audio record through audio jack on baseboard
+
+--) YAFFS Driver
+    - Support for YAFFS (Yet Another Flash File System) on the onboard NAND 
+      flash.
+
+--) Bluetooth Driver
+
+--) Backlight Driver
+
+--) Root Power Bus Driver
+
+--) Power Key Driver
+
+--) LED Switch Driver
+    - SOM-LV only
+  
+--) Display Driver
+    - Supports Logic PD's 4.3" display
+    - Supports the following DVI resolutions:
+         800x600 60 Hz 
+         800x480 60 Hz
+         640x480 60 Hz
+         640x480 72 Hz
+         800x600 56 Hz
+        1024x768 60 Hz
+        1280x720 72 Hz
+
+    - Supports custom display initialization in LogicLoader (auto detects 
+      settings)
+	- NOTE: DVI displays 40, 42, 43, 45, 47 do not work properly if 
+          pre-initialized in LogicLoader using HDMI port
+	- NOTE: DVI hive image for Torpedo has trouble booting if not 
+          pre-initialized in LogicLoader. Initalize and display a splash 
+          screen in LogicLoader before booting Windows.
+    - Supports 2D Hardware Acceleration
+
+--) System DMA Driver
+ 
+--) GPIO Driver
+    - Supports GPIO usage from applications and drivers for DM37x and PMIC 
+      (TPS65950) GPIO.
+    - API header information can be found in 
+       \WINCE600\PLATFORM\COMMON\SRC\SOC\ARM_A8_TPS659XX_TI_V1\inc\gpio.h
+    - Example usage can be found in:
+       \WINCE600\PLATFORM\LOGIC_ARM_A8\SRC\drivers\sdhc\impl\
+       SDController.cpp
+
+--) I2C Driver
+
+--) Wi-Fi Driver
+    - Supports WiLink6.0 solution using WL1271 module
+    - Provided in binary format only
+
+--) NETUI Driver
+    - Custom NETUI driver with modified dialog boxes to support Logic PD's 
+      4.3" display
+
+--) Ethernet Driver
+    - Boot-time and run-time cable detection
+    - 10/100 MB/s full/half duplex modes support
+    - Auto negotiation support
+    - Static IP and DHCP address support
+    - LAN921x and LAN922x chip support
+    
+--) SDIO Driver
+    - Boot-time and run-time card detection
+    - DMA supported read and write transfers
+    - Write protection support
+    - On-board Wi-Fi chip support
+
+--) McBSP Driver
+
+--) SPI Driver
+    - Supports SPI1, SPI2, and SPI3
+	NOTE: SPI2 on DM3730 Torpedo Development Kit requires capacitors 
+        C156 and C157 to be de-populated
+    - Supports DMA operation
+    
+--) UART Driver
+    - Supports 5, 6, 7, 8N1 with standard baud rates up to and including 
+      115200b/s.
+
+--) Touch Driver
+
+--) USB OTG - DM37x USB0 Port
+    - Function
+      - Can function as an ActiveSync device
+      - Can function as a mass storage device
+    - Host
+      - Supports Human Interface Devices (HID) (e.g., mouse, keyboard)
+      - Supports mass storage devices
+
+--) USB Host - ISP176x (post PCN400)
+    - Supports HID devices
+    - Supports three USB Host ports from the SOM-LV and Torpedo baseboards
+
+--) YAFFS- and SD-based Hive Registy is supported. YAFFS is the default, 
+    as defined in LOGIC_ARM_A8.bat
+
+    set BSP_HIVE_YAFFS=1
+    set BSP_HIVE_SDHC=
+    set BSP_HIVE_ATAMEMCF=
+ 
+---) KITL (Only in Debug Configuration)
+    - Debugging with break points
+    - Remote Tools
+    - Will notify Ethernet driver to not load, preventing conflicts
+
+
+3) Tested Platforms
+-------------------
+The following hardware has been tested:
+
+--) SOM-LV: 
+    - Model Number 
+        SOMDM3730-10-1782-JFIR-A
+	SOMDM3730-10-1782-IFXR-A
+	SOMDM3730-10-2782-IFCR-A
+    - Part Number  
+        1017377B
+	1017348D
+	1017318C
+    - Configuration Description
+        ASSEMBLY, DM3730-10 (ROHS), 256MB DDR, 
+        512MB NAND,8MB NOR, AUDIO, TOUCH, ETHERNET, BLUETOOTH, 802.11
+
+--) SOM-LV Baseboard:
+    - Part Number
+        1018103A
+
+--) Torpedo SOM:
+    - Model Number 
+        SOMDM3730-20-2780AGCR-A
+	SOMDM3730-20-1780AGIR-A
+	SOMDM3730-20-1880AGIR-A
+    - Part Number  
+        1017878B
+	1017193C
+	1023692A
+    - Configuration Description
+        ASSEMBLY, TORPEDO, DM3730-20 (ROHS), 256MB DDR, 512MB NAND
+	ASSEMBLY, TORPEDO, DM3730-20 (ROHS), 512MB DDR, 512MB NAND
+
+ --) Torpedo Baseboard: 
+     - Part Number
+         1017984A
+
+
+4) Bootloader
+-------------
+--) LogicLoader 2.5.3 or higher is required
+--) Tested with 2.5.3
+
+
+5) Known Issues
+---------------
+--) The Windows CE operating system supports a maximum physical memory of 512MB. The 
+    DM37 processor has 160MB of register space which must be allocated in the same 512MB 
+    window. As a result, the 512MB RAM configuration has 352MB of User accessible RAM. 
+
+--) A pop sound may be heard at the end of an audio file.
+   (Jira # OMAP3WCE600-341)
+
+--) Audio out is noisy/static for a few seconds after going to suspend and resume.
+    Make sure audio is stopped before going into suspend.
+   (Jira # DM3730WCE-83)
+    
+--) KITL Auto Negotiation
+    KITL will fail at connecting to a network that does not support auto 
+    negotiation. In current release, auto negotiation must be available for KITL
+    to work.
+   (Jira # OMAP3WCE600-444)
+
+--) SDIO multi-block data transfers are limited to 2 blocks/transfer (silicon bug).
+   (Jira # OMAP3WCE600-445)
+
+--) SDIO "I/O mode on" does not reliably work.
+   (Jira # OMAP3WCE600-446)
+
+--) SDIO Windows CETK test does not complete and results in the device 
+    disconnecting.
+   (Jira # OMAP3WCE600-447)
+
+--) Debug binary may not return to operation after entering low-power mode.
+    Upon entering low-power mode or being suspended when using the debug binary
+    module, the system may not recover to full operation. The CE screen may or 
+    may not return, and if the CE screen does return it may or may not operate 
+    normally. This behavior has not been observed on the release binary.
+    (Jira # OMAP3WCE600-448)
+
+--) Debug tools and debugging via ActiveSync are not supported. 
+    Cause:
+     Windows CE 6.0 has no support for Cortex-A8 ARMv7-A; therefore, it falls 
+     back to using ARMv4 instead. However, the built-in Microsoft Platform 
+     Builder CE Debug Tools support the ARMv4i architecture only. 
+    Workaround:
+     Copy 
+      x:\Program Files\Common Files\Microsoft Shared\Windows CE Tools\Platman\
+         target\wce600\armV4i 
+     into 
+      x:\Program Files\Common Files\Microsoft Shared\Windows CE Tools\Platman\
+         target\wce600\armV4
+    For further information, please refer to the following URL:
+    http://nicolasbesson.blogspot.com/2007/06/remote-tools-arm-processor-and-windows.html
+
+--) SPI Test will fail on the first pass on SPI1 interface if Bluetooth is 
+    configured in the build. It will pass on the second attempt. If Bluetooth is
+    not configured, the test should pass on the first attempt. 
+   (Jira # OMAP3WCE600-449) (see also OMAP3WCE600-154)
+
+--) Bluetooth driver will generate DEBUGCHK breaks (2 to 3 times) when using a 
+    debug build with kernel debugger. Pressing the F5 key (Debug Menu / 'Start')
+    to continue running will properly boot the device. "Unknown: DEBUGCHK failed
+    in file C:\ymzki\private\winceos\comm\bluetooth\pan\.\miniport.cxx at line 
+    5594"
+   (Jira # OMAP3WCE600-59)
+
+--) UFSDIO/SDHC driver may generate DEBUGCHK breaks (~10 times) when using a 
+    debug build with kernel debugger. Pressing the F5 key (Debug Menu / 'Start')
+    to continue running may help, a reboot may be required. "Unknown: DEBUGCHK 
+    failed in file C:\WINCE600\PLATFORM\LOGIC_SOM_OMAP35x\SRC\drivers\sdhc\
+    SDBUS2\sddevice.cpp"
+   (Jira # OMAP3WCE600-450)
+
+--) USB OTG Host functionality requires adding the following items to the OS 
+    build: 
+      - USB OTG Function
+      - USB Function
+      - USB Function Client
+   (Jira # OMAP3WCE600-451)
+
+--) USB OTG may disconnect from USB Host or USB Devices.
+   (Jira # OMAP3WCE600-91)
+
+--) USB mass storage devices connected to the USB Host interface unexpectedly 
+    terminate during read transactions. This issue does not exist when 
+    connecting a USB mass storage device to the USB OTG interface.
+   (Jira # OMAP3WCE600-452)
+
+--) Charge current is set to 1.2A; the limit for the DM3730 Torpedo Development 
+    kit is 0.6A (at room temperature less than 30C). To change the charging current, 
+    comment the following code from the \WINCE600\PLATFORM\LOGIC_SOM_OMAP35x\SRC\
+    oal\oallib\oem_pm.c file:
+
+   // UPDATE MAIN BATTERY CHARGING SETTINGS ON TORPEDO PLATFORM
+   {
+      OALTritonWrite(hTwl, TWL_BOOT_BCI, 0x10); //need to turn off auto-charging
+      OALTritonWrite(hTwl, TWL_BCICTL1, 0x20); //update charging current to 2x
+      OALTritonWrite(hTwl, TWL_BOOT_BCI, 0x11); //turn back on auto-charging
+
+   // OALTritonWrite(hTwl, TWL_BCIMFKEY, 0xE7);
+   // OALTritonWrite(hTwl, TWL_BCIIREF1, 0xFF); //update charging current
+
+   // OALTritonWrite(hTwl, TWL_BCIMFKEY, 0xE7);
+   // OALTritonWrite(hTwl, TWL_BCIIREF2, 0x03); //update charging current
+   }
+   (Jira # OMAP3WCE600-39)
+
+--) For the DM3730/AM3703 Torpedo SOMs, movie or audio files requiring certain 
+    codecs will have a warning message saying the codec is not available. Playback 
+    of movies continues with no audio.
+   (Jira # OMAP3WCE600-308)
+
+--) When using the 3.6" or 6.4" display, it can be difficult to calibrate with 
+    touch as the display touch is out of calibration. The user must attach a 
+    mouse to navigate to the calibration application.
+    (Jira # OMAP3WCE600-510)
+
+--) Cannot use touch or USB devices when KITL is enabled on the DM3730/AM3703
+    Torpedo SOM.
+    (Jira # OMAP3WCE600-467)
+
+--) Serial Debug messages appear on UARTA.
+    If you disable the serial debug and enable UARTA to be used as a 
+    serial standard UART, you still get serial debug messages from UARTA. 
+    (Jira # OMAP3WCE600-464)
+
+--) CETK Test Failure "RTC_Real-Time_Functions" - December 31st rollover test.
+    This is a Microsoft-related issue due to enabling DST.
+    (Jira # OMAP3WCE600-375)
+
+--) USB OTG HOST USB Powered Hub + 2 devices at Run-Time is non-functional.
+    Neither keyboard nor mouse will work well with powered hub.
+    (Jira # OMAP3WCE600-350)
+
+--) Included files are not properly added. SDK build does not include necessary 
+    header files.
+    (Jira # OMAP3WCE600-471)
+
+--) Performance: Poor Object Store File System Performance.
+    The performance of copying a file from \Temp to "\Application Data" is low.
+    (Jira # OMAP3WCE600-511)
+
+--) Performance: Poor Object Store File System Performance.
+    The performance of copying a file from \Temp to "\Application Data" is low.
+    (Jira # OMAP3WCE600-511)
+
+--) DVFS: OPM0 Is not functional.
+    Core Frequency is not divided.
+    (Jira # DM3730WCE-20)
+
+--) Display: Display does not turn off upon System Timeout.
+    Display does not go blank at the end of system idle time out.
+    (Jira # DM3730WCE-19)
+
+--) Display: Diplay cannot be resumed by touch input.
+    (Jira # DM3730WCE-12)
+
+--) Display: Certain displays do not operate properly if pre-initialized in 
+    LogicLoader using HDMI port
+    (Jira # DM3730WCE-84).
+
+--) USB: USB UNPowered Hub+KB+Mouse detect at boot and at run-time (DM3730/AM3703 SOM-LV).
+    The mouse may not function after rebooting the board with the 
+    unpowered hub with mouse and keyboard.
+    (Jira # DM3730WCE-28)
+
+--) USB: Simultaneous USB mouse and keyboard activity (DM3730/AM3703 Torpedo SOM).
+    Simultaneous USB mouse and keyboard activity make both stop working.
+    (Jira # DM3730WCE-48)
+
+6) How To
+---------
+--) How to enable debug messages
+    By default, debug messages get disabled at the end of kernel initialization.
+    The rationale for disabling the debug messages is to avoid conflicts between
+    the debug messages and the user-level UART driver as they use the same 
+    physical UART port. In order to enable the debug messages, select the 
+    DM37x SOM-LV Debug serial option found in the following catalog path
+    Third Party\BSP\LOGIC_ARM_A8\Device Drivers\Serial\UART\UART1
+
+    When the debug serial option is enabled, the use of the COM1 UART driver 
+    will not be available. The other serial ports are available when receiving 
+    debug messages through the debug serial port.
+
+    NOTE: The recommended method for debug is using KITL.
+        
+--) How to enable KITL
+    - Open Project > LOGIC_SOM_ARM_A8 properties window.
+    - Select active configuration from drop-down menu.
+    - Under Configuration Properties > Build Options: 
+        - check "Enable Kernel debugger"
+        - check "Enable KITL"
+    - Under Configuration Properties > Environment:
+        - set environment variable "bsp_share_eth" to 1
+
+--) How to disable KITL
+    - Open Project > LOGIC_SOM_ARM_A8 properties window.
+    - Select active configuration from drop-down menu.
+    - Under Configuration Properties > Build Options:
+        - uncheck "Enable Kernel debugger"
+        - uncheck "Enable KITL"
+    - Under Configuration Properties > Environment:
+        - set environment variable "bsp_share_eth" to 0
+
+--) How to shorten the delay between removing a storage device and seeing the 
+   icon disappear in Internet Explorer window
+    - Adjust the following registry entries in platform.reg. The values shown 
+      here are recommended values only.
+        [HKEY_LOCAL_MACHINE\System\StorageManager]
+            "PNPUnloadDelay"=dword:3E8    ; 0.5s - default: dword:1000 (4096ms)
+            "PNPWaitIODelay"=dword:1F4    ; 1.0s - default: dword:1000 (4096ms)
+
+--) How to set hive registry
+    - The OS Designs included in this BSP use RAM registry. The hive registry 
+      component can be selected for custom development. Along with switching to
+      the hive registry component (requires a Rebuild Solution, i.e., Clean 
+      Sysgen), select where the hive is placed using the variables below.
+
+    - Hive-based registry can be set using BSP Variables. The default variable 
+      set is 'BSP_HIVE_YAFFS=1',which will set the proper registry entries for 
+      placing the hive on the YAFFS partition in NAND. For use on an SD card, 
+      set 'BSP_HIVE_SDHC=1' and the others to nothing.
+            
+      YAFFS HIVE (default if Hive used)
+        In LOGIC_ARM_A8.bat
+           set BSP_HIVE_YAFFS=1
+           set BSP_HIVE_SDHC=
+           set BSP_HIVE_ATAMEMCF=
+
+      SD CARD HIVE
+        In LOGIC_ARM_A8.bat
+           set BSP_HIVE_YAFFS=
+           set BSP_HIVE_SDHC=1
+           set BSP_HIVE_ATAMEMCF=
+      
+    - Perform a Rebuild Solution (i.e., Clean Sysgen) when changing between 
+      RAM-based and Hive-based registries.
+   
+--) How to build when changing bewteen platforms (Torpedo vs SOM-LV)
+    - The BSP can support two platforms: DM3730/AM3703 Torpedo SOM or 
+      DM3730/AM3703 SOM-LV. The platform can be selected in 
+      Catalog Items View > Third Party > BSP > 
+      LOGIC_ARM_A8: ARM4VI > Platform Support (choose one) > DM37X 
+      SOM-LV or DM37X Torpedo.
+      
+    - Note that changing the platform requires a Clean Sysgen. This can be 
+      accomplished using one of the following options:
+        - Solution Explorer > LOGIC_ARM_A8 > C:/WINCE600 > Platform > 
+          LOGIC_ARM_A8 (right-mouse-clik menu) > Rebuild
+        - Menu > Build > Rebuild Solution
+        - Menu > Build > Advance Build Commands > Clean Sysgen
+        - Menu > Build > Advance Build Commands > Rebuild Current BSP and 
+          Subprojects 
+
+
+7) History
+---------------
+--) Version 3.0.0 -  06/22/2011
+
+--) Version 3.0.1 -  08/01/2011
+   - Updates to Wi-Fi chip detection (SOM-LV only)
+   - Minor documentation updates
+
+--) Version 3.0.2 -  07/17/2013
+   - Added support for 256 MB and 512 MB RAM
+   - Added SPI1 and SPI2 functionality
+   - Fixed numerous display issues
+   - Minor documentation updates
+
+
+8) REVISION INFORMATION
+-----------------------
+This is current SVN information for the SRS:
+
+$Rev:: 35188                     $: Revision of last commit
+$Author:: steve.kim              $: Author of last commit
+$Date:: 2013-07-18 15:23:32 -050#$: Date of last commit
+
+-----------------------------------------------------------------------------
+Copyright (c) 2013 Logic PD, Inc.                             www.logicpd.com

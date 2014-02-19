@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".UseCamera" >
+
+    <TextView
+        android:id="@+id/connexusTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/connexus" 
+        />
+    
+    <ImageView
+        android:id="@+id/showCameraPicture"
+        android:contentDescription="@string/cameraPreview"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_below="@id/connexusTag"
+        android:layout_centerHorizontal="true" 
+        />
+    
+    <Button 
+        android:id="@+id/buttonTakePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showCameraPicture"
+        android:layout_alignParentLeft="true"
+        android:text="@string/takePicture"
+        android:onClick="takePicture"
+        />
+    
+    <Button
+        android:id="@+id/buttonUsePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showCameraPicture"
+        android:layout_alignParentRight="true"
+        android:text="@string/usePicture"
+        android:onClick="usePicture"
+        />
+    
+    <Button
+        android:id="@+id/buttonCameraStream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonTakePicture"
+        android:layout_centerInParent="true"
+        android:text="@string/buttonStreams"
+        android:onClick="backToStreams"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RemoteSerialAndroid</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <!-- Main_Activity -->
+    <string name="portDetails">Enter port details here</string>
+    <string name="IPAddress">IP Address</string>
+    <string name="portNumber">Port Number</string>
+    <string name="createPort">Create Port</string>
+    
+    <!-- Serial Port Interaction -->
+    <string name="title_activity_serial_port_interaction">SerialPortInteraction</string>
+    <string name="startSerial">Start/Stop Logging</string>
+    <string name="PortOutput">Serial Port output</string>
+    <string name="PortInput">Input command here</string>
+    <string name="SendData">Send</string>
+    <string name="googleDrive">Upload to Google Drive</string>
+    <string name="Error">Search for message</string>
+    <string name="Search">Search</string>
+
+</resources>

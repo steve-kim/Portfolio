@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SerialPortInteraction" >
+        
+    	<TextView
+        android:id="@+id/SerialOutput"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scrollbars="vertical"
+        android:hint="@string/PortOutput" />    
+        
+	    
+      <EditText 
+        android:id="@+id/SerialInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SerialOutput"
+        android:hint="@string/PortInput" />
+      
+      <EditText
+          android:id="@+id/SearchForError"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/SerialInput"
+          android:hint="@string/Error" />
+      
+      <Button 
+          android:id="@+id/errorSearch"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/SearchForError"
+		  android:text="@string/Search"
+          android:onClick="setErrorSearch" />
+      
+      <Button 
+          android:id="@+id/SendData"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/SerialOutput"
+          android:layout_toRightOf="@id/SerialInput"
+          android:text="@string/SendData" 
+          android:onClick="sendData" />
+
+    
+    <Button
+        android:id="@+id/startLogging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/startSerial"
+        android:onClick="toggleLogging" />
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/startLogging"
+        android:text="@string/googleDrive"
+        android:onClick="uploadGoogleDrive" />
+    
+
+</RelativeLayout>

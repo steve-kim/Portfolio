@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.connexusandroid"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.connexusandroid.ViewAllStreams"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.connexusandroid.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.example.connexusandroid.ConnexusService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.connexusandroid.ViewSingleStream"
+            android:label="@string/title_activity_view_single_stream"
+            android:parentActivityName="com.example.connexusandroid.ViewAllStreams" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.connexusandroid.ViewAllStreams" />
+        </activity>
+        <activity
+            android:name="com.example.connexusandroid.UploadImage"
+            android:label="@string/title_activity_upload_image"
+            android:parentActivityName="com.example.connexusandroid.ViewSingleStream" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.connexusandroid.ViewSingleStream" />
+        </activity>
+        <activity
+            android:name="com.example.connexusandroid.UseCamera"
+            android:label="@string/title_activity_use_camera"
+            android:parentActivityName="com.example.connexusAndroid.UploadImage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.connexusAndroid.UploadImage" />
+        </activity>
+        
+        <service android:name="AuthenticatationService">
+    	<intent-filter>
+        	<action android:name="android.accounts.AccountAuthenticator" />
+    	</intent-filter>
+    	<meta-data android:name="android.accounts.AccountAuthenticator"
+        	android:resource="@xml/authenticator" />
+		</service>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,21 @@
+# view AndroidManifest.xml #generated:22
+-keep class com.apt.remoteserialapp.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:31
+-keep class com.apt.remoteserialapp.SerialPortInteraction { <init>(...); }
+
+# onClick res/layout/activity_main.xml #generated:31
+-keepclassmembers class * { *** createPort(...); }
+
+# onClick res/layout/activity_serial_port_interaction.xml #generated:40
+-keepclassmembers class * { *** sendData(...); }
+
+# onClick res/layout/activity_serial_port_interaction.xml #generated:32
+-keepclassmembers class * { *** setErrorSearch(...); }
+
+# onClick res/layout/activity_serial_port_interaction.xml #generated:50
+-keepclassmembers class * { *** toggleLogging(...); }
+
+# onClick res/layout/activity_serial_port_interaction.xml #generated:59
+-keepclassmembers class * { *** uploadGoogleDrive(...); }
+
